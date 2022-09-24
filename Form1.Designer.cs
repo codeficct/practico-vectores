@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -48,15 +49,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.labelQuestion = new System.Windows.Forms.Label();
+            this.textInput3 = new System.Windows.Forms.TextBox();
+            this.buttonSet = new System.Windows.Forms.Button();
+            this.buttonGet = new System.Windows.Forms.Button();
+            this.buttonRun = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Result2 = new System.Windows.Forms.TextBox();
+            this.Result1 = new System.Windows.Forms.TextBox();
+            this.labelInput2 = new System.Windows.Forms.Label();
+            this.textInput2 = new System.Windows.Forms.TextBox();
+            this.labelInput1 = new System.Windows.Forms.Label();
+            this.labelQuestion4 = new System.Windows.Forms.Label();
+            this.textInput1 = new System.Windows.Forms.TextBox();
+            this.labelQuestion1 = new System.Windows.Forms.Label();
+            this.labelQuestion2 = new System.Windows.Forms.Label();
+            this.labelQuestion3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.labelInput3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -246,16 +265,18 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(229, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
@@ -272,72 +293,297 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 34);
+            this.label1.Location = new System.Drawing.Point(6, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 25);
+            this.label1.Size = new System.Drawing.Size(216, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Práctico de Vectores";
+            this.label1.Text = "{ Práctico de Vectores }";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(34, 60);
+            this.label2.Location = new System.Drawing.Point(27, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 13);
+            this.label2.Size = new System.Drawing.Size(175, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Univ. Luis Gabriel Janco Alvarez";
+            this.label2.Text = "Univ. Luis Gabriel Janco Alvarez 👨🏻‍💻";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.labelInput3);
+            this.panel2.Controls.Add(this.textInput3);
+            this.panel2.Controls.Add(this.buttonSet);
+            this.panel2.Controls.Add(this.buttonGet);
+            this.panel2.Controls.Add(this.buttonRun);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.Result2);
+            this.panel2.Controls.Add(this.Result1);
+            this.panel2.Controls.Add(this.labelInput2);
+            this.panel2.Controls.Add(this.textInput2);
+            this.panel2.Controls.Add(this.labelInput1);
+            this.panel2.Controls.Add(this.labelQuestion4);
+            this.panel2.Controls.Add(this.textInput1);
+            this.panel2.Controls.Add(this.labelQuestion1);
+            this.panel2.Controls.Add(this.labelQuestion2);
+            this.panel2.Controls.Add(this.labelQuestion3);
             this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(229, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(571, 509);
+            this.panel2.Size = new System.Drawing.Size(647, 509);
             this.panel2.TabIndex = 1;
             // 
-            // panel6
+            // textInput3
             // 
-            this.panel6.Controls.Add(this.labelQuestion);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 24);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(571, 100);
-            this.panel6.TabIndex = 1;
+            this.textInput3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textInput3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textInput3.Location = new System.Drawing.Point(262, 185);
+            this.textInput3.Name = "textInput3";
+            this.textInput3.Size = new System.Drawing.Size(70, 29);
+            this.textInput3.TabIndex = 14;
+            this.textInput3.Visible = false;
             // 
-            // labelQuestion
+            // buttonSet
             // 
-            this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuestion.Location = new System.Drawing.Point(27, 42);
-            this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(249, 17);
-            this.labelQuestion.TabIndex = 0;
-            this.labelQuestion.Text = "Aún no ha seleccionado nungun ejercicio.";
+            this.buttonSet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonSet.BackColor = System.Drawing.Color.LightBlue;
+            this.buttonSet.FlatAppearance.BorderSize = 0;
+            this.buttonSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSet.Location = new System.Drawing.Point(356, 185);
+            this.buttonSet.Name = "buttonSet";
+            this.buttonSet.Size = new System.Drawing.Size(115, 30);
+            this.buttonSet.TabIndex = 13;
+            this.buttonSet.Text = "Cargar";
+            this.buttonSet.UseVisualStyleBackColor = false;
+            this.buttonSet.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // buttonGet
+            // 
+            this.buttonGet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonGet.BackColor = System.Drawing.Color.LightBlue;
+            this.buttonGet.FlatAppearance.BorderSize = 0;
+            this.buttonGet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGet.Location = new System.Drawing.Point(479, 354);
+            this.buttonGet.Name = "buttonGet";
+            this.buttonGet.Size = new System.Drawing.Size(115, 30);
+            this.buttonGet.TabIndex = 12;
+            this.buttonGet.Text = "Descargar";
+            this.buttonGet.UseVisualStyleBackColor = false;
+            this.buttonGet.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // buttonRun
+            // 
+            this.buttonRun.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRun.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonRun.FlatAppearance.BorderSize = 0;
+            this.buttonRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRun.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRun.Location = new System.Drawing.Point(479, 185);
+            this.buttonRun.Name = "buttonRun";
+            this.buttonRun.Size = new System.Drawing.Size(115, 30);
+            this.buttonRun.TabIndex = 11;
+            this.buttonRun.Text = "Ejecutar";
+            this.buttonRun.UseVisualStyleBackColor = false;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(48, 359);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 21);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Resultado 2";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(49, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 21);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Resultado 1";
+            // 
+            // Result2
+            // 
+            this.Result2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Result2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Result2.Location = new System.Drawing.Point(52, 399);
+            this.Result2.Multiline = true;
+            this.Result2.Name = "Result2";
+            this.Result2.ReadOnly = true;
+            this.Result2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Result2.Size = new System.Drawing.Size(542, 77);
+            this.Result2.TabIndex = 8;
+            // 
+            // Result1
+            // 
+            this.Result1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Result1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Result1.Location = new System.Drawing.Point(52, 262);
+            this.Result1.Multiline = true;
+            this.Result1.Name = "Result1";
+            this.Result1.ReadOnly = true;
+            this.Result1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Result1.Size = new System.Drawing.Size(542, 77);
+            this.Result1.TabIndex = 7;
+            // 
+            // labelInput2
+            // 
+            this.labelInput2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInput2.AutoSize = true;
+            this.labelInput2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInput2.ForeColor = System.Drawing.Color.Black;
+            this.labelInput2.Location = new System.Drawing.Point(173, 165);
+            this.labelInput2.Name = "labelInput2";
+            this.labelInput2.Size = new System.Drawing.Size(43, 17);
+            this.labelInput2.TabIndex = 6;
+            this.labelInput2.Text = "label5";
+            this.labelInput2.Visible = false;
+            // 
+            // textInput2
+            // 
+            this.textInput2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textInput2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textInput2.Location = new System.Drawing.Point(176, 185);
+            this.textInput2.Name = "textInput2";
+            this.textInput2.Size = new System.Drawing.Size(70, 29);
+            this.textInput2.TabIndex = 5;
+            this.textInput2.Visible = false;
+            // 
+            // labelInput1
+            // 
+            this.labelInput1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInput1.AutoSize = true;
+            this.labelInput1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInput1.ForeColor = System.Drawing.Color.Black;
+            this.labelInput1.Location = new System.Drawing.Point(49, 164);
+            this.labelInput1.Name = "labelInput1";
+            this.labelInput1.Size = new System.Drawing.Size(43, 17);
+            this.labelInput1.TabIndex = 4;
+            this.labelInput1.Text = "label5";
+            this.labelInput1.Visible = false;
+            // 
+            // labelQuestion4
+            // 
+            this.labelQuestion4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelQuestion4.AutoSize = true;
+            this.labelQuestion4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestion4.Location = new System.Drawing.Point(17, 117);
+            this.labelQuestion4.Name = "labelQuestion4";
+            this.labelQuestion4.Size = new System.Drawing.Size(120, 21);
+            this.labelQuestion4.TabIndex = 3;
+            this.labelQuestion4.Text = "labelQuestion4";
+            // 
+            // textInput1
+            // 
+            this.textInput1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textInput1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textInput1.Location = new System.Drawing.Point(52, 184);
+            this.textInput1.Name = "textInput1";
+            this.textInput1.Size = new System.Drawing.Size(108, 29);
+            this.textInput1.TabIndex = 2;
+            this.textInput1.Visible = false;
+            // 
+            // labelQuestion1
+            // 
+            this.labelQuestion1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelQuestion1.AutoSize = true;
+            this.labelQuestion1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestion1.Location = new System.Drawing.Point(17, 42);
+            this.labelQuestion1.Name = "labelQuestion1";
+            this.labelQuestion1.Size = new System.Drawing.Size(341, 21);
+            this.labelQuestion1.TabIndex = 0;
+            this.labelQuestion1.Text = "Aún no has seleccionado ningún ejercicio. 🚫";
+            // 
+            // labelQuestion2
+            // 
+            this.labelQuestion2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelQuestion2.AutoSize = true;
+            this.labelQuestion2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestion2.Location = new System.Drawing.Point(17, 67);
+            this.labelQuestion2.Name = "labelQuestion2";
+            this.labelQuestion2.Size = new System.Drawing.Size(120, 21);
+            this.labelQuestion2.TabIndex = 1;
+            this.labelQuestion2.Text = "labelQuestion2";
+            // 
+            // labelQuestion3
+            // 
+            this.labelQuestion3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelQuestion3.AutoSize = true;
+            this.labelQuestion3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestion3.Location = new System.Drawing.Point(17, 92);
+            this.labelQuestion3.Name = "labelQuestion3";
+            this.labelQuestion3.Size = new System.Drawing.Size(120, 21);
+            this.labelQuestion3.TabIndex = 2;
+            this.labelQuestion3.Text = "labelQuestion3";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(571, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(647, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.limpiarToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // limpiarToolStripMenuItem
+            // 
+            this.limpiarToolStripMenuItem.Name = "limpiarToolStripMenuItem";
+            this.limpiarToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.limpiarToolStripMenuItem.Text = "Limpiar";
+            this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.limpiarToolStripMenuItem_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // labelInput3
+            // 
+            this.labelInput3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInput3.AutoSize = true;
+            this.labelInput3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInput3.ForeColor = System.Drawing.Color.Black;
+            this.labelInput3.Location = new System.Drawing.Point(259, 165);
+            this.labelInput3.Name = "labelInput3";
+            this.labelInput3.Size = new System.Drawing.Size(43, 17);
+            this.labelInput3.TabIndex = 15;
+            this.labelInput3.Text = "label5";
+            this.labelInput3.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 509);
+            this.ClientSize = new System.Drawing.Size(876, 509);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(816, 548);
+            this.MinimumSize = new System.Drawing.Size(892, 548);
             this.Name = "Form1";
-            this.Text = "Práctico de Vectores";
+            this.Text = "Práctico de Vectores - Luis Gabriel Janco A.";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -347,8 +593,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -375,8 +621,26 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label labelQuestion;
+        private System.Windows.Forms.Label labelQuestion1;
+        private System.Windows.Forms.Label labelQuestion2;
+        private System.Windows.Forms.Label labelQuestion3;
+        private System.Windows.Forms.Label labelQuestion4;
+        private System.Windows.Forms.Button buttonRun;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox Result2;
+        private System.Windows.Forms.TextBox Result1;
+        private System.Windows.Forms.Label labelInput2;
+        private System.Windows.Forms.TextBox textInput2;
+        private System.Windows.Forms.Label labelInput1;
+        private System.Windows.Forms.TextBox textInput1;
+        private System.Windows.Forms.Button buttonGet;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button buttonSet;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limpiarToolStripMenuItem;
+        private System.Windows.Forms.TextBox textInput3;
+        private System.Windows.Forms.Label labelInput3;
     }
 }
 
