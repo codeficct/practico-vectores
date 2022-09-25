@@ -92,6 +92,7 @@ namespace PracticoDeVectores
             return num % multiple == 0;
         }
 
+        // TODO: Should count the submultiples
         public int countSubMultiples()
         {
             int index, count = 0;
