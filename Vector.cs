@@ -87,19 +87,17 @@ namespace PracticoDeVectores
             return "F = " + result;
         }
 
-        public bool isMultiple(int num, int multiple)
-        {
-            return num % multiple == 0;
-        }
-
         // TODO: Should count the submultiples
         public int countSubMultiples()
         {
+            IntegerNumber objInteger = new IntegerNumber();
             int index, count = 0;
-            int arrLength = arrNumbers.Length;
-            for (index = 0; index < arrLength; index++)
+            int[] arrTest = {0, 3, 1, 9, 5, 12, 12, 6, 7 };
+            // int arrLength = arrNumbers.Length;
+            for (index = 1; index < 8; index++)
             {
-                if (isMultiple(index, arrNumbers[index]))
+                objInteger.setNumber(index);
+                if (objInteger.isMultiple(arrNumbers[index]))
                 {
                     count++;
                 }
