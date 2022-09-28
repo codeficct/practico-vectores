@@ -88,6 +88,7 @@ namespace PracticoDeVectores
             Result2.Clear();
             textInput1.Clear();
             textInput2.Clear();
+            textInput3.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -136,6 +137,18 @@ namespace PracticoDeVectores
             labelQuestion1.Text = "3. Contar elementos que se encuentren en posiciones que sean sus";
             labelQuestion2.Text = "submúltiplos, Si V{3,1,9,5,12,12,6,7}";
             labelQuestion3.Text = "Posiciones 1,2,3,4, 5, 6 , 7,8 => 3 ; porque 1 es submult de 3, 3 de 9, 6 de 12";
+
+            labelInput1.Visible = true;
+            labelInput1.Text = "Cantidad";
+            textInput1.Visible = true;
+
+            labelInput2.Visible = true;
+            labelInput2.Text = "Min";
+            textInput2.Visible = true;
+
+            labelInput3.Visible = true;
+            labelInput3.Text = "Max";
+            textInput3.Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -222,6 +235,9 @@ namespace PracticoDeVectores
             try
             {
                 if (textInput1.Text == "") throw new ArgumentException("Introduce la cantidad de elementos a mostrar (ne).");
+                int value = int.Parse(textInput1.Text);
+                int min = int.Parse(textInput2.Text);
+                int max = int.Parse(textInput3.Text);
                 switch (currentExercise)
                 {
                     case 1:
@@ -233,9 +249,11 @@ namespace PracticoDeVectores
                     case 2:
                         if (textInput2.Text == "") throw new ArgumentException("Introduce un rango (Min).");
                         if (textInput3.Text == "") throw new ArgumentException("Introduce un rango (Max).");
-                        int value = int.Parse(textInput1.Text);
-                        int min = int.Parse(textInput2.Text);
-                        int max = int.Parse(textInput3.Text);
+                        objVector1.setData(value, min, max);
+                        break;
+                    case 3:
+                        if (textInput2.Text == "") throw new ArgumentException("Introduce un rango (Min).");
+                        if (textInput3.Text == "") throw new ArgumentException("Introduce un rango (Max).");
                         objVector1.setData(value, min, max);
                         break;
                 }
@@ -251,17 +269,19 @@ namespace PracticoDeVectores
             try
             {
                 if (objVector1.showNumber() == 0) throw new ArgumentException("Primero debes Cargar los Datos.");
+                download();
                 switch (currentExercise)
                 {
                     case 1:
                         int amount = int.Parse(textInput1.Text);
                         int numBase = int.Parse(textInput2.Text);
                         Result1.Text = objVector1.getArrNumber(amount, numBase);
-                        download();
                         break;
                     case 2:
                         Result1.Text = objVector1.accumulateElements();
-                        download();
+                        break;
+                    case 3:
+                        Result1.Text = objVector1.countSubMultiples().ToString();
                         break;
                 }
             }
