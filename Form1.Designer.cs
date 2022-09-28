@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelInput3 = new System.Windows.Forms.Label();
             this.textInput3 = new System.Windows.Forms.TextBox();
             this.buttonSet = new System.Windows.Forms.Button();
             this.buttonGet = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.labelInput3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -335,6 +335,19 @@
             this.panel2.Size = new System.Drawing.Size(647, 509);
             this.panel2.TabIndex = 1;
             // 
+            // labelInput3
+            // 
+            this.labelInput3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInput3.AutoSize = true;
+            this.labelInput3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInput3.ForeColor = System.Drawing.Color.Black;
+            this.labelInput3.Location = new System.Drawing.Point(259, 165);
+            this.labelInput3.Name = "labelInput3";
+            this.labelInput3.Size = new System.Drawing.Size(43, 17);
+            this.labelInput3.TabIndex = 15;
+            this.labelInput3.Text = "label5";
+            this.labelInput3.Visible = false;
+            // 
             // textInput3
             // 
             this.textInput3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -342,7 +355,7 @@
             this.textInput3.Location = new System.Drawing.Point(262, 185);
             this.textInput3.Name = "textInput3";
             this.textInput3.Size = new System.Drawing.Size(70, 29);
-            this.textInput3.TabIndex = 14;
+            this.textInput3.TabIndex = 12;
             this.textInput3.Visible = false;
             // 
             // buttonSet
@@ -370,7 +383,7 @@
             this.buttonGet.Location = new System.Drawing.Point(479, 354);
             this.buttonGet.Name = "buttonGet";
             this.buttonGet.Size = new System.Drawing.Size(115, 30);
-            this.buttonGet.TabIndex = 12;
+            this.buttonGet.TabIndex = 15;
             this.buttonGet.Text = "Descargar";
             this.buttonGet.UseVisualStyleBackColor = false;
             this.buttonGet.Click += new System.EventHandler(this.button11_Click);
@@ -385,7 +398,7 @@
             this.buttonRun.Location = new System.Drawing.Point(479, 185);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(115, 30);
-            this.buttonRun.TabIndex = 11;
+            this.buttonRun.TabIndex = 14;
             this.buttonRun.Text = "Ejecutar";
             this.buttonRun.UseVisualStyleBackColor = false;
             this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
@@ -458,7 +471,7 @@
             this.textInput2.Location = new System.Drawing.Point(176, 185);
             this.textInput2.Name = "textInput2";
             this.textInput2.Size = new System.Drawing.Size(70, 29);
-            this.textInput2.TabIndex = 5;
+            this.textInput2.TabIndex = 11;
             this.textInput2.Visible = false;
             // 
             // labelInput1
@@ -492,7 +505,7 @@
             this.textInput1.Location = new System.Drawing.Point(52, 184);
             this.textInput1.Name = "textInput1";
             this.textInput1.Size = new System.Drawing.Size(108, 29);
-            this.textInput1.TabIndex = 2;
+            this.textInput1.TabIndex = 10;
             this.textInput1.Visible = false;
             // 
             // labelQuestion1
@@ -557,19 +570,6 @@
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // labelInput3
-            // 
-            this.labelInput3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInput3.AutoSize = true;
-            this.labelInput3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInput3.ForeColor = System.Drawing.Color.Black;
-            this.labelInput3.Location = new System.Drawing.Point(259, 165);
-            this.labelInput3.Name = "labelInput3";
-            this.labelInput3.Size = new System.Drawing.Size(43, 17);
-            this.labelInput3.TabIndex = 15;
-            this.labelInput3.Text = "label5";
-            this.labelInput3.Visible = false;
             // 
             // Form1
             // 
