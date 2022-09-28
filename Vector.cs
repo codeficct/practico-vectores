@@ -92,17 +92,29 @@ namespace PracticoDeVectores
         {
             IntegerNumber objInteger = new IntegerNumber();
             int index, count = 0;
-            int[] arrTest = {0, 3, 1, 9, 5, 12, 12, 6, 7 };
-            // int arrLength = arrNumbers.Length;
-            for (index = 1; index < 8; index++)
+            int arrLength = arrNumbers.Length;
+            for (index = 1; index < number; index++)
             {
                 objInteger.setNumber(index);
-                if (objInteger.isMultiple(arrNumbers[index]))
+                if (objInteger.isMultiple(arrNumbers[index - 1]))
                 {
                     count++;
                 }
             }
             return count;
+        }
+
+        public double findHalf(int initialValue, int reason)
+        {
+            int index = 1, magic = 0;
+            double result = 0.0;
+            while (magic <= number)
+            {
+                magic = initialValue + (index - 1) * reason;
+                result = result + arrNumbers[magic - 1];
+                index++;
+            }
+            return result / index;
         }
     }
 }
