@@ -158,6 +158,18 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "Vi+(i-1)*r sea Vi=5 y r=3 (r: sinónimo de multiplicador)";
             labelQuestion3.Text = "V{5,4,6,9,8,4,5,7,2, 5, 4, 2, 6, 3} => media=22/4=5,5";
             labelQuestion4.Text = "1,2,3,4,5,6,7,8,9,10,11,12,13,14 <= índices.";
+
+            labelInput1.Visible = true;
+            labelInput1.Text = "Cantidad";
+            textInput1.Visible = true;
+
+            labelInput2.Visible = true;
+            labelInput2.Text = "Min";
+            textInput2.Visible = true;
+
+            labelInput3.Visible = true;
+            labelInput3.Text = "Max";
+            textInput3.Visible = true;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -167,6 +179,18 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "V{1,2,3,4,5,6,7,8,9,10}";
             labelQuestion3.Text = "El resultado es: R1{V{2,3,5,7} “primos” y R2{V{1,4,6,8,9} “no primos”";
             labelQuestion4.ResetText();
+
+            labelInput1.Visible = true;
+            labelInput1.Text = "Cantidad";
+            textInput1.Visible = true;
+
+            labelInput2.Visible = true;
+            labelInput2.Text = "Min";
+            textInput2.Visible = true;
+
+            labelInput3.Visible = true;
+            labelInput3.Text = "Max";
+            textInput3.Visible = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -176,6 +200,18 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "V{1,2,3,4,5,6,7,8,9} => V{1,2,7,6,5,4,3,8,9}";
             labelQuestion3.Text = "a=3 y b=7 a y b son posiciones.";
             labelQuestion4.ResetText();
+
+            labelInput1.Visible = true;
+            labelInput1.Text = "Cantidad";
+            textInput1.Visible = true;
+
+            labelInput2.Visible = true;
+            labelInput2.Text = "Min";
+            textInput2.Visible = true;
+
+            labelInput3.Visible = true;
+            labelInput3.Text = "Max";
+            textInput3.Visible = true;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -236,26 +272,20 @@ namespace PracticoDeVectores
             {
                 if (textInput1.Text == "") throw new ArgumentException("Introduce la cantidad de elementos a mostrar (ne).");
                 int value = int.Parse(textInput1.Text);
-                int min = int.Parse(textInput2.Text);
-                int max = int.Parse(textInput3.Text);
-                switch (currentExercise)
+                if (currentExercise == 1)
                 {
-                    case 1:
-                        if (textInput2.Text == "") throw new ArgumentException("Introduce un numero como base (b).");
-                        int amount = int.Parse(textInput1.Text);
-                        int numBase = int.Parse(textInput2.Text);
-                        objVector1.setDataManually(amount, numBase);
-                        break;
-                    case 2:
-                        if (textInput2.Text == "") throw new ArgumentException("Introduce un rango (Min).");
-                        if (textInput3.Text == "") throw new ArgumentException("Introduce un rango (Max).");
-                        objVector1.setData(value, min, max);
-                        break;
-                    case 3:
-                        if (textInput2.Text == "") throw new ArgumentException("Introduce un rango (Min).");
-                        if (textInput3.Text == "") throw new ArgumentException("Introduce un rango (Max).");
-                        objVector1.setData(value, min, max);
-                        break;
+                    if (textInput2.Text == "") throw new ArgumentException("Introduce un numero como base (b).");
+                    int numBase = int.Parse(textInput2.Text);
+                    objVector1.setDataManually(value, numBase);
+                }
+                else
+                {
+                    int min = int.Parse(textInput2.Text);
+                    int max = int.Parse(textInput3.Text);
+                    if (textInput2.Text == "") throw new ArgumentException("Introduce un rango (Min).");
+                    if (textInput3.Text == "") throw new ArgumentException("Introduce un rango (Max).");
+                    objVector1.setData(value, min, max);
+
                 }
             }
             catch (Exception error)
@@ -282,6 +312,16 @@ namespace PracticoDeVectores
                         break;
                     case 3:
                         Result1.Text = objVector1.countSubMultiples().ToString();
+                        break;
+                    case 4:
+                        Result1.Text = objVector1.findTheMean().ToString();
+                        break;
+                    case 5:
+                        Result1.Text = objVector1.selectPrimesAndNotPrimes();
+                        break;
+                    case 6:
+                        objVector1.investNumberInRange();
+                        Result1.Text = objVector1.getData();
                         break;
                 }
             }
