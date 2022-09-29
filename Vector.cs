@@ -104,17 +104,59 @@ namespace PracticoDeVectores
             return count;
         }
 
-        public double findHalf(int initialValue, int reason)
+        public double findTheMean(int initialValue = 5, int reason = 3)
         {
             int index = 1, magic = 0;
             double result = 0.0;
-            while (magic <= number)
+            while (magic < number)
             {
                 magic = initialValue + (index - 1) * reason;
                 result = result + arrNumbers[magic - 1];
                 index++;
             }
-            return result / index;
+            return result / (index - 1);
         }
+
+        public string selectPrimesAndNotPrimes()
+        {
+            IntegerNumber objInteger = new IntegerNumber();
+            string result = "", strPrimes = "", strNoPrimes = "";
+            int index, indexP = 0, indexNP = 0;
+            int[] primes = new int[number];
+            int[] noPrimes = new int[number];
+            for (index = 0; index < number; index++)
+            {
+                objInteger.setNumber(arrNumbers[index]);
+                if (objInteger.isPrime())
+                {
+                    primes[indexP] = arrNumbers[index];
+                    strPrimes = strPrimes + arrNumbers[index] + ",";
+                    indexP++;
+                }
+                else
+                {
+                    primes[indexNP] = arrNumbers[index];
+                    strNoPrimes = strNoPrimes + arrNumbers[index] + ",";
+                    indexNP++;
+                }
+            }
+            return "R1: V{" + strPrimes + "}  R2: V{ "+ strNoPrimes + "}";
+        }
+
+        public void investNumberInRange()
+        {
+            int index, a = 2, b = 7;
+            int[] newArr = new int[number];
+            
+            for (index = 0; index < number; index++)
+            {
+                if (index >= 1 && index <= 7)
+                {
+                    arrNumbers[b] = arrNumbers[index];
+                        b--;
+                }
+            }
+        }
+
     }
 }
