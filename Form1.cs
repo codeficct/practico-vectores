@@ -13,7 +13,7 @@ namespace PracticoDeVectores
 {
     public partial class Form1 : Form
     {
-        Vector objVector1;
+        Vector objVector1, objVector2;
         private Button currentButton;
         int currentExercise = 0;
         bool isDisable = false;
@@ -80,6 +80,7 @@ namespace PracticoDeVectores
             buttonGet.Enabled = false;
 
             objVector1 = new Vector();
+            objVector2 = new Vector();
         }
 
         private void limpiarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,6 +90,21 @@ namespace PracticoDeVectores
             textInput1.Clear();
             textInput2.Clear();
             textInput3.Clear();
+        }
+
+        private void InputsToSetRandom()
+        {
+            labelInput1.Visible = true;
+            labelInput1.Text = "Cantidad";
+            textInput1.Visible = true;
+
+            labelInput2.Visible = true;
+            labelInput2.Text = "Min";
+            textInput2.Visible = true;
+
+            labelInput3.Visible = true;
+            labelInput3.Text = "Max";
+            textInput3.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -117,18 +133,7 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "y recordando Fibonacci: 0,1,1,2,3,5,8,13… ";
             labelQuestion3.Text = "F=2/0! – 3/1! + 6/1! – 4/2! + 1/3! – 7/5!";
 
-            labelInput1.Visible = true;
-            labelInput1.Text = "Cantidad";
-            textInput1.Visible = true;
-
-            labelInput2.Visible = true;
-            labelInput2.Text = "Min";
-            textInput2.Visible = true;
-
-            labelInput3.Visible = true;
-            labelInput3.Text = "Max";
-            textInput3.Visible = true;
-
+            InputsToSetRandom();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -138,17 +143,7 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "submúltiplos, Si V{3,1,9,5,12,12,6,7}";
             labelQuestion3.Text = "Posiciones 1,2,3,4, 5, 6 , 7,8 => 3 ; porque 1 es submult de 3, 3 de 9, 6 de 12";
 
-            labelInput1.Visible = true;
-            labelInput1.Text = "Cantidad";
-            textInput1.Visible = true;
-
-            labelInput2.Visible = true;
-            labelInput2.Text = "Min";
-            textInput2.Visible = true;
-
-            labelInput3.Visible = true;
-            labelInput3.Text = "Max";
-            textInput3.Visible = true;
+            InputsToSetRandom();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -159,17 +154,7 @@ namespace PracticoDeVectores
             labelQuestion3.Text = "V{5,4,6,9,8,4,5,7,2, 5, 4, 2, 6, 3} => media=22/4=5,5";
             labelQuestion4.Text = "1,2,3,4,5,6,7,8,9,10,11,12,13,14 <= índices.";
 
-            labelInput1.Visible = true;
-            labelInput1.Text = "Cantidad";
-            textInput1.Visible = true;
-
-            labelInput2.Visible = true;
-            labelInput2.Text = "Min";
-            textInput2.Visible = true;
-
-            labelInput3.Visible = true;
-            labelInput3.Text = "Max";
-            textInput3.Visible = true;
+            InputsToSetRandom();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -180,17 +165,7 @@ namespace PracticoDeVectores
             labelQuestion3.Text = "El resultado es: R1{V{2,3,5,7} “primos” y R2{V{1,4,6,8,9} “no primos”";
             labelQuestion4.ResetText();
 
-            labelInput1.Visible = true;
-            labelInput1.Text = "Cantidad";
-            textInput1.Visible = true;
-
-            labelInput2.Visible = true;
-            labelInput2.Text = "Min";
-            textInput2.Visible = true;
-
-            labelInput3.Visible = true;
-            labelInput3.Text = "Max";
-            textInput3.Visible = true;
+            InputsToSetRandom();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -201,17 +176,7 @@ namespace PracticoDeVectores
             labelQuestion3.Text = "a=3 y b=7 a y b son posiciones.";
             labelQuestion4.ResetText();
 
-            labelInput1.Visible = true;
-            labelInput1.Text = "Cantidad";
-            textInput1.Visible = true;
-
-            labelInput2.Visible = true;
-            labelInput2.Text = "Min";
-            textInput2.Visible = true;
-
-            labelInput3.Visible = true;
-            labelInput3.Text = "Max";
-            textInput3.Visible = true;
+            InputsToSetRandom();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -221,6 +186,8 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "V{3,7,13,2,5,} el resultado es: TRUE";
             labelQuestion3.Text = "V{2,7,3,5,6,4,5,8,3,3} el resultados es: FALSE";
             labelQuestion4.ResetText();
+
+            InputsToSetRandom();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -230,6 +197,8 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "V{4,7,6,1,8,2} y V2{V{5,7,9,4,1}";
             labelQuestion3.Text = "El resultado es: V3{ V{ 4,7,1}";
             labelQuestion4.ResetText();
+
+            InputsToSetRandom();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -239,6 +208,8 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "V{4,7,6,1,8,2} y V2{V=5,7,9,4,1}";
             labelQuestion3.Text = "El resultado es: V3{ 4,7,6,1,8,2,5,9}";
             labelQuestion4.Text = "En el resultado no puede haber elementos repetidos.";
+
+            InputsToSetRandom();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -248,6 +219,8 @@ namespace PracticoDeVectores
             labelQuestion2.Text = "V{7,2,2,2,3,4,4,4,5,5,3,6,7} Resultado => TRUE";
             labelQuestion3.Text = "V{7,2,2,2,3,|2,4,2,5,5,3,6,7} Resultado => FALSE";
             labelQuestion4.ResetText();
+
+            InputsToSetRandom();
         }
 
         private void download()
@@ -285,7 +258,10 @@ namespace PracticoDeVectores
                     if (textInput2.Text == "") throw new ArgumentException("Introduce un rango (Min).");
                     if (textInput3.Text == "") throw new ArgumentException("Introduce un rango (Max).");
                     objVector1.setData(value, min, max);
-
+                    if (currentExercise == 8)
+                    {
+                        objVector2.setData(value, min, max);
+                    }
                 }
             }
             catch (Exception error)
@@ -322,6 +298,14 @@ namespace PracticoDeVectores
                     case 6:
                         objVector1.investNumberInRange();
                         Result1.Text = objVector1.getData();
+                        break;
+                    case 7:
+                        bool unique = objVector1.IsUnique();
+                        if (unique) Result1.Text = unique.ToString() + " : Todos los elementos son unicos!";
+                        else Result1.Text = unique.ToString() + " : Algunos elementos se repiten.";
+                        break;
+                    case 8:
+                        Result1.Text = objVector1.FindOfIntersection(ref objVector2);
                         break;
                 }
             }
