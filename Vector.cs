@@ -140,23 +140,84 @@ namespace PracticoDeVectores
                     indexNP++;
                 }
             }
-            return "R1: V{" + strPrimes + "}  R2: V{ "+ strNoPrimes + "}";
+            return "R1: V{" + strPrimes + "}  R2: V{ " + strNoPrimes + "}";
         }
 
         public void investNumberInRange()
         {
-            int index, a = 2, b = 7;
-            int[] newArr = new int[number];
-            
+            int index, a = 6;
+            int[] arrClone = arrNumbers;
+
             for (index = 0; index < number; index++)
             {
-                if (index >= 1 && index <= 7)
+                if (index >= 2 && index <= 6)
                 {
-                    arrNumbers[b] = arrNumbers[index];
-                        b--;
+                    arrNumbers[index] = arrClone[a];
+                    a--;
                 }
             }
         }
 
+        private bool isEqual(int num, int index)
+        {
+            bool result = false;
+            int i;
+            for (i = index; i < number; i++)
+                if ((arrNumbers[i] == num) && (index != i)) result = true;
+            return result;
+        }
+
+        public bool IsUnique()
+        {
+            int index;
+            bool result = true;
+            int[] arrClone = arrNumbers;
+
+            for (index = 0; index < number; index++)
+            {
+                if (isEqual(arrNumbers[index], index)) result = false;
+            }
+            return result;
+        }
+
+        private bool isEqualIntersection(int num, int index, ref Vector ObjVector2)
+        {
+            bool result = false;
+            int i;
+            for (i = index; i < number; i++)
+                if ((ObjVector2.arrNumbers[i] == num) && (index != i)) result = true;
+            return result;
+        }
+
+        public string FindOfIntersection(ref Vector objVector2)
+        {
+            string result = "";
+            int index;
+            for (index = 0; index < number; index++)
+            {
+                if (isEqualIntersection(arrNumbers[index], index, ref objVector2))
+                {
+                    result = result + arrNumbers[index].ToString() + ", ";
+                }
+            }
+            if (result == "") result = " No hay intersección ";
+            return "V{" + result + "}";
+        }
+
+        public string FindTheUnion()
+        {
+            string result = "";
+            int index;
+
+            for (index = 0; index < number; index++)
+            {
+                if (!isEqual(arrNumbers[index], index))
+                {
+                    // code here
+                }
+            }
+
+            return "V{" + result + "}";
+        }
     }
 }
