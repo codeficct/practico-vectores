@@ -13,7 +13,7 @@ namespace PracticoDeVectores
 {
     public partial class Form1 : Form
     {
-        Vector objVector1, objVector2;
+        Vector objVector1, objVector2, objVector3;
         private Button currentButton;
         int currentExercise = 0;
         bool isDisable = false;
@@ -45,10 +45,6 @@ namespace PracticoDeVectores
             if (currentButton != null)
             {
                 currentButton.BackColor = Color.White;
-                // labelParam1.Visible = false;
-                // textBoxParam1.Visible = false;
-                // textBoxMax.Enabled = true;
-                // textBoxMin.Enabled = true;
                 isDisable = false;
             }
         }
@@ -81,6 +77,7 @@ namespace PracticoDeVectores
 
             objVector1 = new Vector();
             objVector2 = new Vector();
+            objVector3 = new Vector();
         }
 
         private void limpiarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,6 +87,9 @@ namespace PracticoDeVectores
             textInput1.Clear();
             textInput2.Clear();
             textInput3.Clear();
+            textInterValue.Clear();
+            textInputMin.Clear();
+            textInputMax.Clear();
         }
 
         private void InputsToSetRandom()
@@ -105,6 +105,33 @@ namespace PracticoDeVectores
             labelInput3.Visible = true;
             labelInput3.Text = "Max";
             textInput3.Visible = true;
+
+            if (currentExercise == 8 || currentExercise == 9)
+            {
+
+                labelInterValue.Visible = true;
+                textInterValue.Visible = true;
+                labelInterValue.Text = "Cantidad 2";
+
+                textInputMin.Visible = true;
+                labelInterMin.Visible = true;
+                labelInterMin.Text = "Min 2";
+
+                textInputMax.Visible = true;
+                labelInterMax.Visible = true;
+                labelInterMax.Text = "Max 2";
+            }
+            else
+            {
+                textInterValue.Visible = false;
+                labelInterValue.Visible = false;
+
+                textInputMin.Visible = false;
+                labelInterMin.Visible = false;
+
+                textInputMax.Visible = false;
+                labelInterMax.Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -225,7 +252,10 @@ namespace PracticoDeVectores
 
         private void download()
         {
-            Result2.Text = objVector1.getData();
+            if ((currentExercise == 8) && (currentExercise == 9))
+                Result2.Text = objVector1.getData() + "   " + objVector3.getData();
+            else
+                Result2.Text = objVector1.getData();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -235,12 +265,6 @@ namespace PracticoDeVectores
 
         private void button12_Click(object sender, EventArgs e)
         {
-            notifyIcon1.Icon = new System.Drawing.Icon(Path.GetFullPath("uagrm.ico"));
-            notifyIcon1.Text = "";
-            notifyIcon1.Visible = true;
-            notifyIcon1.BalloonTipTitle = "Práctico de Vectores - Cargar";
-            notifyIcon1.BalloonTipText = "Cargado Exitosamente";
-            notifyIcon1.ShowBalloonTip(10);
             try
             {
                 if (textInput1.Text == "") throw new ArgumentException("Introduce la cantidad de elementos a mostrar (ne).");
@@ -253,14 +277,17 @@ namespace PracticoDeVectores
                 }
                 else
                 {
-                    int min = int.Parse(textInput2.Text);
-                    int max = int.Parse(textInput3.Text);
                     if (textInput2.Text == "") throw new ArgumentException("Introduce un rango (Min).");
                     if (textInput3.Text == "") throw new ArgumentException("Introduce un rango (Max).");
+                    int min = int.Parse(textInput2.Text);
+                    int max = int.Parse(textInput3.Text);
                     objVector1.setData(value, min, max);
-                    if (currentExercise == 8)
+                    if ((currentExercise == 8) || (currentExercise == 9))
                     {
-                        objVector2.setData(value, min, max);
+                        int value2 = int.Parse(textInterValue.Text);
+                        int min2 = int.Parse(textInputMin.Text);
+                        int max2 = int.Parse(textInputMax.Text);
+                        objVector3.setData(value2, min2, max2);
                     }
                 }
             }
@@ -305,7 +332,10 @@ namespace PracticoDeVectores
                         else Result1.Text = unique.ToString() + " : Algunos elementos se repiten.";
                         break;
                     case 8:
-                        Result1.Text = objVector1.FindOfIntersection(ref objVector2);
+                        Result1.Text = objVector1.FindOfIntersection(ref objVector3);
+                        break;
+                    case 9:
+                        Result1.Text = objVector1.FindTheUnion(ref objVector3);
                         break;
                 }
             }
