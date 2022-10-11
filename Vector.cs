@@ -43,6 +43,16 @@ namespace PracticoDeVectores
                 arrNumbers[index] = numRandom.Next(min, max);
         }
 
+        public void setData2(int value, int min, int max)
+        {
+            number = value;
+            arrNumbers = new int[value];
+            Random numRandom = new Random();
+            int index;
+            for (index = 0; index < value; index++)
+                arrNumbers[index] = numRandom.Next(min, max);
+        }
+
         public string getData()
         {
             string result = "";
@@ -180,23 +190,34 @@ namespace PracticoDeVectores
             return result;
         }
 
-        private bool isEqualIntersection(int num, int index, ref Vector ObjVector2)
+        private bool isEqualIntersection(int num, int index, ref Vector ObjVector3)
         {
             bool result = false;
             int i;
-            for (i = index; i < number; i++)
-                if ((ObjVector2.arrNumbers[i] == num) && (index != i)) result = true;
+            for (i = 0; i < ObjVector3.arrNumbers.Length; i++)
+                // if ((num == ObjVector2.arrNumbers[i]) && (index != i)) result = true;
+                if ((num == ObjVector3.arrNumbers[i]))
+                    result = true;
             return result;
         }
 
-        public string FindOfIntersection(ref Vector objVector2)
+        public string FindOfIntersection(ref Vector objVector3)
         {
             string result = "";
-            int index;
+            int index, c = 0;
+            int[] intersection = new int[number];
             for (index = 0; index < number; index++)
             {
-                if (isEqualIntersection(arrNumbers[index], index, ref objVector2))
+                if (isEqualIntersection(arrNumbers[index], index, ref objVector3))
                 {
+                    foreach (int item in intersection)
+                    {
+                        if ((item != arrNumbers[index]) && (intersection.Length < 0))
+                        {
+                            intersection[c] = arrNumbers[index];
+                            c++;
+                        }
+                    }
                     result = result + arrNumbers[index].ToString() + ", ";
                 }
             }
@@ -204,20 +225,9 @@ namespace PracticoDeVectores
             return "V{" + result + "}";
         }
 
-        public string FindTheUnion()
+        public string FindTheUnion(ref Vector objVector3)
         {
-            string result = "";
-            int index;
-
-            for (index = 0; index < number; index++)
-            {
-                if (!isEqual(arrNumbers[index], index))
-                {
-                    // code here
-                }
-            }
-
-            return "V{" + result + "}";
+            return "V{" + string.Join(",", arrNumbers.Union(objVector3.arrNumbers).Where(x => x >= 0)) + "}";
         }
     }
 }
