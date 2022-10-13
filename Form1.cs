@@ -56,16 +56,16 @@ namespace PracticoDeVectores
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button1.Text = "Ejercicio 1";
-            button2.Text = "Ejercicio 2";
-            button3.Text = "Ejercicio 3";
-            button4.Text = "Ejercicio 4";
-            button5.Text = "Ejercicio 5";
-            button6.Text = "Ejercicio 6";
-            button7.Text = "Ejercicio 7";
-            button8.Text = "Ejercicio 8";
-            button9.Text = "Ejercicio 9";
-            button10.Text = "Ejercicio 10";
+            button1.Text = "Ejercicio 1.1";
+            button2.Text = "Ejercicio 1.2";
+            button3.Text = "Ejercicio 1.3";
+            button4.Text = "Ejercicio 1.4";
+            button5.Text = "Ejercicio 1.5";
+            button6.Text = "Ejercicio 1.6";
+            button7.Text = "Ejercicio 1.7";
+            button8.Text = "Ejercicio 1.8";
+            button9.Text = "Ejercicio 1.9";
+            button10.Text = "Ejercicio 1.10";
 
             labelQuestion2.ResetText();
             labelQuestion3.ResetText();
@@ -121,11 +121,21 @@ namespace PracticoDeVectores
                 labelInterMax.Visible = true;
                 labelInterMax.Text = "Max 2";
             }
-            else
+            else if (currentExercise == 10)
             {
                 textInterValue.Visible = false;
                 labelInterValue.Visible = false;
 
+                textInputMin.Visible = true;
+                labelInterMin.Visible = true;
+                labelInterMin.Text = "Seg. 'a'";
+
+                textInputMax.Visible = true;
+                labelInterMax.Visible = true;
+                labelInterMax.Text = "Seg. 'b'";
+            }
+            else
+            {
                 textInputMin.Visible = false;
                 labelInterMin.Visible = false;
 
@@ -252,7 +262,7 @@ namespace PracticoDeVectores
 
         private void download()
         {
-            if ((currentExercise == 8) && (currentExercise == 9))
+            if ((currentExercise == 8) || (currentExercise == 9))
                 Result2.Text = objVector1.getData() + "   " + objVector3.getData();
             else
                 Result2.Text = objVector1.getData();
@@ -336,6 +346,9 @@ namespace PracticoDeVectores
                         break;
                     case 9:
                         Result1.Text = objVector1.FindTheUnion(ref objVector3);
+                        break;
+                    case 10:
+                        Result1.Text = objVector1.IsOrderInSegment(int.Parse(textInputMin.Text), int.Parse(textInputMax.Text), ref objVector3).ToString();
                         break;
                 }
             }
