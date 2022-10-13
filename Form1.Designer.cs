@@ -49,6 +49,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelInterMax = new System.Windows.Forms.Label();
+            this.textInputMax = new System.Windows.Forms.TextBox();
+            this.labelInterMin = new System.Windows.Forms.Label();
+            this.textInputMin = new System.Windows.Forms.TextBox();
+            this.labelInterValue = new System.Windows.Forms.Label();
+            this.textInterValue = new System.Windows.Forms.TextBox();
             this.labelInput3 = new System.Windows.Forms.Label();
             this.textInput3 = new System.Windows.Forms.TextBox();
             this.buttonSet = new System.Windows.Forms.Button();
@@ -70,18 +76,16 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.labelInterMax = new System.Windows.Forms.Label();
-            this.textInputMax = new System.Windows.Forms.TextBox();
-            this.labelInterMin = new System.Windows.Forms.Label();
-            this.textInputMin = new System.Windows.Forms.TextBox();
-            this.labelInterValue = new System.Windows.Forms.Label();
-            this.textInterValue = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnSecond = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -138,9 +142,9 @@
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 106);
+            this.panel4.Location = new System.Drawing.Point(0, 133);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(229, 434);
+            this.panel4.Size = new System.Drawing.Size(229, 407);
             this.panel4.TabIndex = 1;
             // 
             // button10
@@ -287,12 +291,13 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(229, 106);
+            this.panel3.Size = new System.Drawing.Size(229, 133);
             this.panel3.TabIndex = 0;
             // 
             // label1
@@ -346,6 +351,75 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(647, 540);
             this.panel2.TabIndex = 1;
+            // 
+            // labelInterMax
+            // 
+            this.labelInterMax.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInterMax.AutoSize = true;
+            this.labelInterMax.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInterMax.ForeColor = System.Drawing.Color.Black;
+            this.labelInterMax.Location = new System.Drawing.Point(260, 219);
+            this.labelInterMax.Name = "labelInterMax";
+            this.labelInterMax.Size = new System.Drawing.Size(43, 17);
+            this.labelInterMax.TabIndex = 21;
+            this.labelInterMax.Text = "label5";
+            this.labelInterMax.Visible = false;
+            // 
+            // textInputMax
+            // 
+            this.textInputMax.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textInputMax.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textInputMax.Location = new System.Drawing.Point(263, 239);
+            this.textInputMax.Name = "textInputMax";
+            this.textInputMax.Size = new System.Drawing.Size(70, 29);
+            this.textInputMax.TabIndex = 20;
+            this.textInputMax.Visible = false;
+            // 
+            // labelInterMin
+            // 
+            this.labelInterMin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInterMin.AutoSize = true;
+            this.labelInterMin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInterMin.ForeColor = System.Drawing.Color.Black;
+            this.labelInterMin.Location = new System.Drawing.Point(174, 219);
+            this.labelInterMin.Name = "labelInterMin";
+            this.labelInterMin.Size = new System.Drawing.Size(43, 17);
+            this.labelInterMin.TabIndex = 17;
+            this.labelInterMin.Text = "label5";
+            this.labelInterMin.Visible = false;
+            // 
+            // textInputMin
+            // 
+            this.textInputMin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textInputMin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textInputMin.Location = new System.Drawing.Point(177, 239);
+            this.textInputMin.Name = "textInputMin";
+            this.textInputMin.Size = new System.Drawing.Size(70, 29);
+            this.textInputMin.TabIndex = 19;
+            this.textInputMin.Visible = false;
+            // 
+            // labelInterValue
+            // 
+            this.labelInterValue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelInterValue.AutoSize = true;
+            this.labelInterValue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInterValue.ForeColor = System.Drawing.Color.Black;
+            this.labelInterValue.Location = new System.Drawing.Point(50, 218);
+            this.labelInterValue.Name = "labelInterValue";
+            this.labelInterValue.Size = new System.Drawing.Size(43, 17);
+            this.labelInterValue.TabIndex = 16;
+            this.labelInterValue.Text = "label5";
+            this.labelInterValue.Visible = false;
+            // 
+            // textInterValue
+            // 
+            this.textInterValue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textInterValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textInterValue.Location = new System.Drawing.Point(53, 238);
+            this.textInterValue.Name = "textInterValue";
+            this.textInterValue.Size = new System.Drawing.Size(108, 29);
+            this.textInterValue.TabIndex = 18;
+            this.textInterValue.Visible = false;
             // 
             // labelInput3
             // 
@@ -583,74 +657,39 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // labelInterMax
+            // panel6
             // 
-            this.labelInterMax.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInterMax.AutoSize = true;
-            this.labelInterMax.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInterMax.ForeColor = System.Drawing.Color.Black;
-            this.labelInterMax.Location = new System.Drawing.Point(260, 219);
-            this.labelInterMax.Name = "labelInterMax";
-            this.labelInterMax.Size = new System.Drawing.Size(43, 17);
-            this.labelInterMax.TabIndex = 21;
-            this.labelInterMax.Text = "label5";
-            this.labelInterMax.Visible = false;
+            this.panel6.Controls.Add(this.btnSecond);
+            this.panel6.Controls.Add(this.btnFirst);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 100);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(229, 33);
+            this.panel6.TabIndex = 2;
             // 
-            // textInputMax
+            // btnFirst
             // 
-            this.textInputMax.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textInputMax.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textInputMax.Location = new System.Drawing.Point(263, 239);
-            this.textInputMax.Name = "textInputMax";
-            this.textInputMax.Size = new System.Drawing.Size(70, 29);
-            this.textInputMax.TabIndex = 20;
-            this.textInputMax.Visible = false;
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.Location = new System.Drawing.Point(0, 0);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(115, 33);
+            this.btnFirst.TabIndex = 0;
+            this.btnFirst.Text = "1era Parte";
+            this.btnFirst.UseVisualStyleBackColor = true;
             // 
-            // labelInterMin
+            // btnSecond
             // 
-            this.labelInterMin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInterMin.AutoSize = true;
-            this.labelInterMin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInterMin.ForeColor = System.Drawing.Color.Black;
-            this.labelInterMin.Location = new System.Drawing.Point(174, 219);
-            this.labelInterMin.Name = "labelInterMin";
-            this.labelInterMin.Size = new System.Drawing.Size(43, 17);
-            this.labelInterMin.TabIndex = 17;
-            this.labelInterMin.Text = "label5";
-            this.labelInterMin.Visible = false;
-            // 
-            // textInputMin
-            // 
-            this.textInputMin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textInputMin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textInputMin.Location = new System.Drawing.Point(177, 239);
-            this.textInputMin.Name = "textInputMin";
-            this.textInputMin.Size = new System.Drawing.Size(70, 29);
-            this.textInputMin.TabIndex = 19;
-            this.textInputMin.Visible = false;
-            // 
-            // labelInterValue
-            // 
-            this.labelInterValue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelInterValue.AutoSize = true;
-            this.labelInterValue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInterValue.ForeColor = System.Drawing.Color.Black;
-            this.labelInterValue.Location = new System.Drawing.Point(50, 218);
-            this.labelInterValue.Name = "labelInterValue";
-            this.labelInterValue.Size = new System.Drawing.Size(43, 17);
-            this.labelInterValue.TabIndex = 16;
-            this.labelInterValue.Text = "label5";
-            this.labelInterValue.Visible = false;
-            // 
-            // textInterValue
-            // 
-            this.textInterValue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textInterValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textInterValue.Location = new System.Drawing.Point(53, 238);
-            this.textInterValue.Name = "textInterValue";
-            this.textInterValue.Size = new System.Drawing.Size(108, 29);
-            this.textInterValue.TabIndex = 18;
-            this.textInterValue.Visible = false;
+            this.btnSecond.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSecond.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecond.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSecond.Location = new System.Drawing.Point(115, 0);
+            this.btnSecond.Name = "btnSecond";
+            this.btnSecond.Size = new System.Drawing.Size(114, 33);
+            this.btnSecond.TabIndex = 1;
+            this.btnSecond.Text = "2da Parte";
+            this.btnSecond.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -676,6 +715,7 @@
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -728,6 +768,9 @@
         private System.Windows.Forms.TextBox textInputMin;
         private System.Windows.Forms.Label labelInterValue;
         private System.Windows.Forms.TextBox textInterValue;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnSecond;
+        private System.Windows.Forms.Button btnFirst;
     }
 }
 
