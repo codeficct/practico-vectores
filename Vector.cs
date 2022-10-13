@@ -130,7 +130,7 @@ namespace PracticoDeVectores
         public string selectPrimesAndNotPrimes()
         {
             IntegerNumber objInteger = new IntegerNumber();
-            string result = "", strPrimes = "", strNoPrimes = "";
+            string strPrimes = "", strNoPrimes = "";
             int index, indexP = 0, indexNP = 0;
             int[] primes = new int[number];
             int[] noPrimes = new int[number];
@@ -195,7 +195,6 @@ namespace PracticoDeVectores
             bool result = false;
             int i;
             for (i = 0; i < ObjVector3.arrNumbers.Length; i++)
-                // if ((num == ObjVector2.arrNumbers[i]) && (index != i)) result = true;
                 if ((num == ObjVector3.arrNumbers[i]))
                     result = true;
             return result;
@@ -228,6 +227,27 @@ namespace PracticoDeVectores
         public string FindTheUnion(ref Vector objVector3)
         {
             return "V{" + string.Join(",", arrNumbers.Union(objVector3.arrNumbers).Where(x => x >= 0)) + "}";
+        }
+
+        public bool IsOrderInSegment(int a, int b, ref Vector objResult)
+        {
+            bool isOrder = false, pass = true;
+            int index;
+            a = a >= 1 ? a - 1 : 0; b = b >= 1 ? b - 1 : 0;
+            for (index = 0; index < number; index++)
+            {
+                if ((index < number) && (index >= a && index < b) && pass)
+                {
+                    if (arrNumbers[index] <= arrNumbers[index + 1])
+                        isOrder = true;
+                    else
+                    {
+                        isOrder = false;
+                        pass = false;
+                    }
+                }
+            }
+            return isOrder;
         }
     }
 }
