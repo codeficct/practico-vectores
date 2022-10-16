@@ -339,8 +339,34 @@ namespace PracticoDeVectores
                         differentEle.Add(arrNumbers[index]);
                 }
             }
-            Console.WriteLine(string.Join(",", differentEle));
             return differentEle.Count;
+        }
+
+        public string LeastRepeatedElement(int a, int b)
+        {
+            int index, index2, count = 0;
+            a = a >= 1 ? a - 1 : 0; b = b >= 1 ? b - 1 : 0;
+            List<int> repeatedItems = new List<int>();
+            List<int> uniqueItems = new List<int>();
+            List<int> countItems = new List<int>();
+            for (index = 0; index < number; index++)
+            {
+                if (index >= a && index <= b)
+                {
+                    bool isExist = uniqueItems.IndexOf(arrNumbers[index]) != -1;
+                    if (!isExist) uniqueItems.Add(arrNumbers[index]);
+                    repeatedItems.Add(arrNumbers[index]);
+                }
+            }
+            repeatedItems.Sort();
+            for (index = 0; index < uniqueItems.Count; index++)
+            {
+                for (index2 = 0; index2 < repeatedItems.Count; index2++)
+                    if (uniqueItems[index] == repeatedItems[index2]) count++;
+                countItems.Add(count);
+                count = 0;
+            }
+            return $"Elementos = {uniqueItems.Count}, Frecuencia = {countItems.Min()}";
         }
     }
 }
