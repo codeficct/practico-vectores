@@ -46,6 +46,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnSecond = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -76,16 +79,14 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.btnSecond = new System.Windows.Forms.Button();
+            this.informaciónDelEstudianteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -299,6 +300,44 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(229, 133);
             this.panel3.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnSecond);
+            this.panel6.Controls.Add(this.btnFirst);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 100);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(229, 33);
+            this.panel6.TabIndex = 2;
+            // 
+            // btnSecond
+            // 
+            this.btnSecond.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSecond.FlatAppearance.BorderSize = 0;
+            this.btnSecond.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecond.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSecond.Location = new System.Drawing.Point(115, 0);
+            this.btnSecond.Name = "btnSecond";
+            this.btnSecond.Size = new System.Drawing.Size(114, 33);
+            this.btnSecond.TabIndex = 1;
+            this.btnSecond.Text = "2da Parte";
+            this.btnSecond.UseVisualStyleBackColor = true;
+            this.btnSecond.Click += new System.EventHandler(this.btnSecond_Click);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.Location = new System.Drawing.Point(0, 0);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(115, 33);
+            this.btnFirst.TabIndex = 0;
+            this.btnFirst.Text = "1era Parte";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // label1
             // 
@@ -640,7 +679,8 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.limpiarToolStripMenuItem});
+            this.limpiarToolStripMenuItem,
+            this.informaciónDelEstudianteToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -648,7 +688,7 @@
             // limpiarToolStripMenuItem
             // 
             this.limpiarToolStripMenuItem.Name = "limpiarToolStripMenuItem";
-            this.limpiarToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.limpiarToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.limpiarToolStripMenuItem.Text = "Limpiar";
             this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.limpiarToolStripMenuItem_Click);
             // 
@@ -657,43 +697,12 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // panel6
+            // informaciónDelEstudianteToolStripMenuItem
             // 
-            this.panel6.Controls.Add(this.btnSecond);
-            this.panel6.Controls.Add(this.btnFirst);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 100);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(229, 33);
-            this.panel6.TabIndex = 2;
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnFirst.FlatAppearance.BorderSize = 0;
-            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFirst.Location = new System.Drawing.Point(0, 0);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(115, 33);
-            this.btnFirst.TabIndex = 0;
-            this.btnFirst.Text = "1era Parte";
-            this.btnFirst.UseVisualStyleBackColor = true;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
-            // 
-            // btnSecond
-            // 
-            this.btnSecond.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSecond.FlatAppearance.BorderSize = 0;
-            this.btnSecond.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSecond.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSecond.Location = new System.Drawing.Point(115, 0);
-            this.btnSecond.Name = "btnSecond";
-            this.btnSecond.Size = new System.Drawing.Size(114, 33);
-            this.btnSecond.TabIndex = 1;
-            this.btnSecond.Text = "2da Parte";
-            this.btnSecond.UseVisualStyleBackColor = true;
-            this.btnSecond.Click += new System.EventHandler(this.btnSecond_Click);
+            this.informaciónDelEstudianteToolStripMenuItem.Name = "informaciónDelEstudianteToolStripMenuItem";
+            this.informaciónDelEstudianteToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.informaciónDelEstudianteToolStripMenuItem.Text = "Información del Estudiante";
+            this.informaciónDelEstudianteToolStripMenuItem.Click += new System.EventHandler(this.informaciónDelEstudianteToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -715,11 +724,11 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -775,6 +784,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnSecond;
         private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.ToolStripMenuItem informaciónDelEstudianteToolStripMenuItem;
     }
 }
 
