@@ -530,6 +530,12 @@ namespace PracticoDeVectores
             button10.Text = "Ejercicio 2.10";
         }
 
+        private void informaciónDelEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Nombre: Luis Gabriel Janco Alvarez\nMateria: Programación 1\nGrupo: INF120 SB\nRegistro: 220104875";
+            MessageBox.Show(message, "Información del Estudiante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void button12_Click(object sender, EventArgs e)
         {
             try
