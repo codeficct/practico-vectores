@@ -463,5 +463,37 @@ namespace PracticoDeVectores
                 }
             }
         }
+
+        public void SegmentPalindrome(ref Vector vectorResult)
+        {
+            int index, index2 = 0, index3 = 0;
+            IntegerNumber objInteger = new IntegerNumber();
+            vectorResult.number = number;
+            vectorResult.arrNumbers = new int[number];
+            List<int> palindrome = new List<int>();
+            List<int> noPalindrome = new List<int>();
+            for (index = 0; index < number; index++)
+            {
+                objInteger.setNumber(arrNumbers[index]);
+                if (objInteger.isPalindrome())
+                    palindrome.Add(arrNumbers[index]);
+                else
+                    noPalindrome.Add(arrNumbers[index]);
+            }
+            palindrome.Sort(); noPalindrome.Sort(); noPalindrome.Reverse();
+            for (index = 0; index < number; index++)
+            {
+                if (index < palindrome.Count)
+                {
+                    vectorResult.arrNumbers[index] = palindrome[index2];
+                    index2++;
+                }
+                else
+                {
+                    vectorResult.arrNumbers[index] = noPalindrome[index3];
+                    index3++;
+                }
+            }
+        }
     }
 }
