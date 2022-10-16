@@ -324,5 +324,23 @@ namespace PracticoDeVectores
                 }
             }
         }
+
+        public int CountDifferentItems(int a, int b)
+        {
+            int index;
+            List<int> differentEle = new List<int>();
+            a = a >= 1 ? a - 1 : 0; b = b >= 1 ? b - 1 : 0;
+            for (index = 0; index < number; index++)
+            {
+                if (index >= a && index <= b)
+                {
+                    bool isExist = differentEle.IndexOf(arrNumbers[index]) != -1;
+                    if (!isExist)
+                        differentEle.Add(arrNumbers[index]);
+                }
+            }
+            Console.WriteLine(string.Join(",", differentEle));
+            return differentEle.Count;
+        }
     }
 }
