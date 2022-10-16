@@ -368,5 +368,33 @@ namespace PracticoDeVectores
             }
             return $"Elementos = {uniqueItems.Count}, Frecuencia = {countItems.Min()}";
         }
+
+        public string DistributionFrequency(int a, int b)
+        {
+            int index, index2, count = 0;
+            a = a >= 1 ? a - 1 : 0; b = b >= 1 ? b - 1 : 0;
+            List<int> uniqueItems = new List<int>();
+            List<int> repeatsItems = new List<int>();
+            List<int> countItems = new List<int>();
+            for (index = 0; index < number; index++)
+            {
+                if (index >= a && index <= b)
+                {
+                    bool isExist = uniqueItems.IndexOf(arrNumbers[index]) != -1;
+                    if (!isExist) uniqueItems.Add(arrNumbers[index]);
+                    repeatsItems.Add(arrNumbers[index]);
+                }
+            }
+            uniqueItems.Sort();
+            for (index = 0; index < uniqueItems.Count; index++)
+            {
+                for (index2 = 0; index2 < repeatsItems.Count; index2++)
+                    if (uniqueItems[index] == repeatsItems[index2])
+                        count++;
+                countItems.Add(count);
+                count = 0;
+            }
+            return "Elem{ " + "V={" + string.Join(", ", uniqueItems) + "} }  -  Frec{ " + "V={" + string.Join(", ", countItems) + "} }";
+        }
     }
 }
