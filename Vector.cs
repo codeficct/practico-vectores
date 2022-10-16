@@ -396,5 +396,32 @@ namespace PracticoDeVectores
             }
             return "Elem{ " + "V={" + string.Join(", ", uniqueItems) + "} }  -  Frec{ " + "V={" + string.Join(", ", countItems) + "} }";
         }
+
+        public string ElementFrecuenceOnFibonacci()
+        {
+            int index, index2, count = 0;
+            IntegerNumber objInteger = new IntegerNumber();
+            List<int> elementsFibo = new List<int>();
+            List<int> countItems = new List<int>();
+            for (index = 0; index < number; index++)
+            {
+                objInteger.setNumber(arrNumbers[index]);
+                if (objInteger.checkIfIsFibonacci())
+                {
+                    bool isExist = elementsFibo.IndexOf(arrNumbers[index]) != -1;
+                    if (!isExist) elementsFibo.Add(arrNumbers[index]);
+                }
+            }
+            elementsFibo.Sort();
+            for (index = 0; index < elementsFibo.Count; index++)
+            {
+                for (index2 = 0; index2 < number; index2++)
+                    if (elementsFibo[index] == arrNumbers[index2])
+                        count++;
+                countItems.Add(count);
+                count = 0;
+            }
+            return "Elem{ " + "V={" + string.Join(", ", elementsFibo) + "} }  -  Frec{ " + "V={" + string.Join(", ", countItems) + "} }";
+        }
     }
 }
