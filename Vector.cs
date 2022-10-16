@@ -295,5 +295,34 @@ namespace PracticoDeVectores
                 }
             }
         }
+
+        public void OrderInternalSpiral()
+        {
+            int index = 0, countEven = 0, countOdd = 0;
+            List<int> even = new List<int>(); List<int> odd = new List<int>();
+            IntegerNumber objInteger = new IntegerNumber();
+            for (index = 0; index < number; index++)
+            {
+                objInteger.setNumber(arrNumbers[index]);
+                if (objInteger.isEven())
+                    even.Add(arrNumbers[index]);
+                else
+                    odd.Add(arrNumbers[index]);
+            }
+            even.Sort(); even.Reverse(); odd.Sort();
+            for (index = 0; index < number; index++)
+            {
+                if ((index + 1) <= odd.Count)
+                {
+                    arrNumbers[index] = odd[countOdd];
+                    countOdd++;
+                }
+                else
+                {
+                    arrNumbers[index] = even[countEven];
+                    countEven++;
+                }
+            }
+        }
     }
 }
