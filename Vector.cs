@@ -97,7 +97,6 @@ namespace PracticoDeVectores
             return "F = " + result;
         }
 
-        // TODO: Should count the submultiples
         public int countSubMultiples()
         {
             IntegerNumber objInteger = new IntegerNumber();
@@ -150,17 +149,17 @@ namespace PracticoDeVectores
                     indexNP++;
                 }
             }
-            return "R1: V{" + strPrimes + "}  R2: V{ " + strNoPrimes + "}";
+            return "R1: V{" + strPrimes + "} 'Primos'     R2: V{ " + strNoPrimes + "} 'No Primos'";
         }
 
-        public void investNumberInRange()
+        public void investNumberInRange(int min, int max)
         {
-            int index, a = 6;
+            int index, a = max - 1;
             int[] arrClone = arrNumbers;
 
             for (index = 0; index < number; index++)
             {
-                if (index >= 2 && index <= 6)
+                if (index >= min - 1 && index <= max + 1)
                 {
                     arrNumbers[index] = arrClone[a];
                     a--;
@@ -248,6 +247,23 @@ namespace PracticoDeVectores
                 }
             }
             return isOrder;
+        }
+
+        public string RemoveNoPrimes()
+        {
+            string result = "";
+            int index;
+            IntegerNumber objInteger = new IntegerNumber();
+            int[] newArray = new int[number];
+            for (index = 0; index < number; index++)
+            {
+                objInteger.setNumber(arrNumbers[index]);
+                if (objInteger.isPrime())
+                {
+                    result = result + arrNumbers[index].ToString() + ",";
+                }
+            }
+            return "v{" + result + "}";
         }
     }
 }
