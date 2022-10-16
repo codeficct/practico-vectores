@@ -483,6 +483,16 @@ namespace PracticoDeVectores
                         labelQuestion3.Text = "    el resultado es: V={10,5,4,5,6,7,8,11,13,20,12}";
                         labelQuestion4.ResetText();
                         InputsToSetRandom(true);
+                        textInterValue.Visible = false;
+                        labelInterValue.Visible = false;
+
+                        textInputMin.Visible = true;
+                        labelInterMin.Visible = true;
+                        labelInterMin.Text = "Seg. 'a'";
+
+                        textInputMax.Visible = true;
+                        labelInterMax.Visible = true;
+                        labelInterMax.Text = "Seg. 'b'";
                     }
                     break;
             }
@@ -648,6 +658,8 @@ namespace PracticoDeVectores
                             Result1.Text = objVector1.IsOrderInSegment(int.Parse(textInputMin.Text), int.Parse(textInputMax.Text), ref objVector3).ToString();
                         else
                         {
+                            objVector1.interleavePrimes(int.Parse(textInputMin.Text), int.Parse(textInputMax.Text), ref objVector2);
+                            Result1.Text = objVector2.getData();
                         }
                         break;
                 }
