@@ -338,6 +338,17 @@ namespace PracticoDeVectores
                         labelQuestion3.Text = "   Resultado => ele = 3 y frec = 1";
                         labelQuestion4.ResetText();
                         InputsToSetRandom(true);
+
+                        textInterValue.Visible = false;
+                        labelInterValue.Visible = false;
+
+                        textInputMin.Visible = true;
+                        labelInterMin.Visible = true;
+                        labelInterMin.Text = "Seg. 'a'";
+
+                        textInputMax.Visible = true;
+                        labelInterMax.Visible = true;
+                        labelInterMax.Text = "Seg. 'b'";
                     }
                     break;
                 case 6:
@@ -537,9 +548,7 @@ namespace PracticoDeVectores
                             Result1.Text = objVector1.getArrNumber(amount, numBase);
                         }
                         else
-                        {
                             Result1.Text = objVector1.RemoveNoPrimes();
-                        }
                         break;
                     case 2:
                         if (currentPart == 1)
@@ -563,16 +572,13 @@ namespace PracticoDeVectores
                         if (currentPart == 1)
                             Result1.Text = objVector1.findTheMean().ToString();
                         else
-                        {
                             Result1.Text = objVector1.CountDifferentItems(int.Parse(textInputMin.Text), int.Parse(textInputMax.Text)).ToString();
-                        }
                         break;
                     case 5:
                         if (currentPart == 1)
                             Result1.Text = objVector1.selectPrimesAndNotPrimes();
                         else
-                        {
-                        }
+                            Result1.Text = objVector1.LeastRepeatedElement(int.Parse(textInputMin.Text), int.Parse(textInputMax.Text));
                         break;
                     case 6:
                         if (currentPart == 1)
