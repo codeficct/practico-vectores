@@ -265,5 +265,35 @@ namespace PracticoDeVectores
             }
             return "v{" + result + "}";
         }
+
+        public void orderElementsWithMultiple(int m)
+        {
+            int index, j, count = 0;
+            List<int> orderEle = new List<int>();
+            IntegerNumber objInteger = new IntegerNumber();
+            for (index = 0; index < number; index++)
+            {
+                if (index + 1 > 1)
+                {
+                    objInteger.setNumber(index + 1);
+                    if (objInteger.isMultiple(m))
+                        orderEle.Add(arrNumbers[index]);
+                }
+            }
+
+            orderEle.Sort();
+            for (j = 0; j < number; j++)
+            {
+                if (j + 1 > 1)
+                {
+                    objInteger.setNumber(j + 1);
+                    if (objInteger.isMultiple(m))
+                    {
+                        arrNumbers[j] = orderEle[count];
+                        count++;
+                    }
+                }
+            }
+        }
     }
 }
