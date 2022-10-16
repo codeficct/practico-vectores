@@ -423,7 +423,7 @@ namespace PracticoDeVectores
             }
             return "Elem{ " + "V={" + string.Join(", ", elementsFibo) + "} }  -  Frec{ " + "V={" + string.Join(", ", countItems) + "} }";
         }
-        
+
         public void SegmentPrimesAndNonPrimes(int a, int b, ref Vector objResult)
         {
             int index, index2 = 0, index3 = 0;
@@ -492,6 +492,53 @@ namespace PracticoDeVectores
                 {
                     vectorResult.arrNumbers[index] = noPalindrome[index3];
                     index3++;
+                }
+            }
+        }
+
+        public void interleavePrimes(int a, int b, ref Vector vectorResult)
+        {
+            int index, index2 = 0, index3 = 0;
+            bool pinpon = true;
+            a = a >= 1 ? a - 1 : 0; b = b >= 1 ? b - 1 : 0;
+            IntegerNumber objInteger = new IntegerNumber();
+            vectorResult.number = number;
+            vectorResult.arrNumbers = new int[number];
+            vectorResult.arrNumbers = arrNumbers;
+            List<int> primes = new List<int>();
+            List<int> noPrimes = new List<int>();
+            for (index = 0; index < number; index++)
+            {
+                if (index >= a && index <= b)
+                {
+                    objInteger.setNumber(arrNumbers[index]);
+                    if (objInteger.isPrime())
+                        primes.Add(arrNumbers[index]);
+                    else
+                        noPrimes.Add(arrNumbers[index]);
+                }
+            }
+            primes.Sort(); noPrimes.Sort();
+            for (index = 0; index < number; index++)
+            {
+                if (index >= a && index <= b)
+                {
+                    if (pinpon)
+                    {
+                        vectorResult.arrNumbers[index] = primes[index2];
+                        Console.WriteLine(index2);
+                        index2++;
+                        if (index3 < noPrimes.Count)
+                            pinpon = false;
+                    }
+                    else
+                    {
+                        vectorResult.arrNumbers[index] = noPrimes[index3];
+                        Console.WriteLine(index3);
+                        index3++;
+                        if (index2 < primes.Count)
+                            pinpon = true;
+                    }
                 }
             }
         }
