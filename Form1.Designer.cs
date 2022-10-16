@@ -670,6 +670,7 @@
             // btnFirst
             // 
             this.btnFirst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirst.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirst.Location = new System.Drawing.Point(0, 0);
@@ -678,10 +679,12 @@
             this.btnFirst.TabIndex = 0;
             this.btnFirst.Text = "1era Parte";
             this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnSecond
             // 
             this.btnSecond.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSecond.FlatAppearance.BorderSize = 0;
             this.btnSecond.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecond.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSecond.Location = new System.Drawing.Point(115, 0);
@@ -690,6 +693,7 @@
             this.btnSecond.TabIndex = 1;
             this.btnSecond.Text = "2da Parte";
             this.btnSecond.UseVisualStyleBackColor = true;
+            this.btnSecond.Click += new System.EventHandler(this.btnSecond_Click);
             // 
             // Form1
             // 
