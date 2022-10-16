@@ -423,5 +423,45 @@ namespace PracticoDeVectores
             }
             return "Elem{ " + "V={" + string.Join(", ", elementsFibo) + "} }  -  Frec{ " + "V={" + string.Join(", ", countItems) + "} }";
         }
+        
+        public void SegmentPrimesAndNonPrimes(int a, int b, ref Vector objResult)
+        {
+            int index, index2 = 0, index3 = 0;
+            a = a >= 1 ? a - 1 : 0; b = b >= 1 ? b - 1 : 0;
+            IntegerNumber objInteger = new IntegerNumber();
+            objResult.number = number;
+            objResult.arrNumbers = new int[number];
+            objResult.arrNumbers = arrNumbers;
+            List<int> primes = new List<int>();
+            List<int> noPrimes = new List<int>();
+            for (index = 0; index < number; index++)
+            {
+                if (index >= a && index <= b)
+                {
+                    objInteger.setNumber(arrNumbers[index]);
+                    if (objInteger.isPrime())
+                        primes.Add(arrNumbers[index]);
+                    else
+                        noPrimes.Add(arrNumbers[index]);
+                }
+            }
+            primes.Sort(); primes.Reverse(); noPrimes.Sort(); noPrimes.Reverse();
+            for (index = 0; index < number; index++)
+            {
+                if (index >= a && index <= b)
+                {
+                    if (index2 < primes.Count)
+                    {
+                        objResult.arrNumbers[index] = primes[index2];
+                        index2++;
+                    }
+                    else
+                    {
+                        objResult.arrNumbers[index] = noPrimes[index3];
+                        index3++;
+                    }
+                }
+            }
+        }
     }
 }
