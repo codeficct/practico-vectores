@@ -212,7 +212,7 @@ namespace PracticoDeVectores
 
         private void download()
         {
-            if ((currentExercise == 8) || (currentExercise == 9))
+            if (((currentExercise == 8) || (currentExercise == 9)) && currentPart == 1)
                 Result2.Text = objVector1.getData() + "   " + objVector3.getData();
             else
                 Result2.Text = objVector1.getData();
@@ -377,6 +377,17 @@ namespace PracticoDeVectores
                         labelQuestion3.Text = "   V={1,2,2,5,3,4,5,4,2,4,5,5,6,7} =>Resultado e{ V={2,3,4,5} }";
                         labelQuestion4.Text = "                                               f{ V={2,1,3,2} }";
                         InputsToSetRandom(true);
+
+                        textInterValue.Visible = false;
+                        labelInterValue.Visible = false;
+
+                        textInputMin.Visible = true;
+                        labelInterMin.Visible = true;
+                        labelInterMin.Text = "Seg. 'a'";
+
+                        textInputMax.Visible = true;
+                        labelInterMax.Visible = true;
+                        labelInterMax.Text = "Seg. 'b'";
                     }
                     break;
                 case 7:
@@ -414,6 +425,17 @@ namespace PracticoDeVectores
                         labelQuestion3.Text = "   V={10,7,10,5,4,6,7,8,4,5,7,2,10,23,10,2}";
                         labelQuestion4.ResetText();
                         InputsToSetRandom(true);
+
+                        textInterValue.Visible = false;
+                        labelInterValue.Visible = false;
+
+                        textInputMin.Visible = true;
+                        labelInterMin.Visible = true;
+                        labelInterMin.Text = "Seg. 'a'";
+
+                        textInputMax.Visible = true;
+                        labelInterMax.Visible = true;
+                        labelInterMax.Text = "Seg. 'b'";
                     }
                     break;
                 case 9:
@@ -517,7 +539,7 @@ namespace PracticoDeVectores
                     int min = int.Parse(textInput2.Text);
                     int max = int.Parse(textInput3.Text);
                     objVector1.setData(value, min, max);
-                    if ((currentExercise == 8) || (currentExercise == 9) && currentPart == 1)
+                    if (((currentExercise == 8) || (currentExercise == 9)) && currentPart == 1)
                     {
                         int value2 = int.Parse(textInterValue.Text);
                         int min2 = int.Parse(textInputMin.Text);
@@ -588,6 +610,7 @@ namespace PracticoDeVectores
                         }
                         else
                         {
+                            Result1.Text = objVector1.DistributionFrequency(int.Parse(textInputMin.Text), int.Parse(textInputMax.Text));
                         }
                         break;
                     case 7:
@@ -599,6 +622,7 @@ namespace PracticoDeVectores
                         }
                         else
                         {
+                            Result1.Text = objVector1.ElementFrecuenceOnFibonacci();
                         }
                         break;
                     case 8:
@@ -606,6 +630,8 @@ namespace PracticoDeVectores
                             Result1.Text = objVector1.FindOfIntersection(ref objVector3);
                         else
                         {
+                            objVector1.SegmentPrimesAndNonPrimes(int.Parse(textInputMin.Text), int.Parse(textInputMax.Text), ref objVector2);
+                            Result1.Text = objVector2.getData();
                         }
                         break;
                     case 9:
@@ -613,6 +639,8 @@ namespace PracticoDeVectores
                             Result1.Text = objVector1.FindTheUnion(ref objVector3);
                         else
                         {
+                            objVector1.SegmentPalindrome(ref objVector2);
+                            Result1.Text = objVector2.getData();
                         }
                         break;
                     case 10:
