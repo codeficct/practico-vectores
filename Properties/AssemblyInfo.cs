@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("PracticoDeVectores")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Practico De Vectores")]
+[assembly: AssemblyDescription("Práctico de Vectores, aplicación de escritorio usando windows form de visual studio en C#.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PracticoDeVectores")]
+[assembly: AssemblyCompany("sauterdev")]
+[assembly: AssemblyProduct("Practico De Vectores")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Practico De Vectores")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible en false, los tipos de este ensamblado no estarán visibles 
